@@ -1,7 +1,7 @@
 {
   "name": "ironclad",
   "version": "3.0.0",
-  "description": "A disciplined, token-efficient agentic skills framework for AI coding agents",
+  "description": "A cognitive framework for AI coding agents — judgment scaffolding, evidence-based completion, and real-time scope control",
   "keywords": [
     "ai",
     "coding-agent",
@@ -11,11 +11,14 @@
     "methodology",
     "claude-code",
     "cursor",
-    "codex"
+    "codex",
+    "gemini",
+    "agentic",
+    "cognitive-framework"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/ironclad"
+    "url": "https://github.com/tsilly07/ironclad-v3"
   }
 }

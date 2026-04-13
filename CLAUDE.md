@@ -1,27 +1,41 @@
 # Ironclad — Claude Code Configuration
 
-This project uses the Ironclad agentic skills framework.
+This project uses the Ironclad cognitive framework for AI coding agents.
+
+## Setup
+
+Begin every session by reading `skills/activate/SKILL.md`.
 
 ## Rules
 
-1. **Always invoke skills before responding.** Use the `Skill` tool, not the `Read` tool.
-2. **Follow the using-ironclad skill** at the start of every conversation.
-3. **Never skip a skill** because a task "seems simple." Check first.
-4. **TDD is mandatory.** Write failing test → minimal code → refactor. No exceptions.
-5. **Error recovery over retry loops.** If stuck 3+ times, invoke error-recovery.
-6. **Track context.** Use PROJECT_STATE.md for multi-session projects.
-7. **Respect token budgets.** Don't re-read files, batch changes, skip verbose output.
+- Invoke skills before responding — even 30% chance of relevance = invoke
+- Run `assumption-audit` before any implementation work
+- Maintain `.ironclad/memory/index.md` across sessions
+- Use `fast-track` only when all qualification criteria are met
+- `scope-containment` is always active during execution
 
-## Skill Priority
+## Skill Reference
 
-Process skills first (brainstorming, debugging) → Implementation skills second.
+| When | Use |
+|---|---|
+| Session start | `activate` |
+| New feature / project | `intention-mapping` → `task-graph` |
+| Before coding | `assumption-audit` + `failure-modes` |
+| During execution | `parallel-execution` or `swarm` |
+| Writing code | `confidence-based-tdd` |
+| Something broken | `root-cause-isolation` |
+| Ready to review | `adversarial-review` |
+| Feedback received | `review-response` |
+| Before "done" | `ship-gate` |
+| Branch done | `completion-protocol` |
+| After a cycle | `momentum-check` |
+| Trivial change | `fast-track` (check criteria first) |
+| Large project / multi-session | `cognitive-offload` |
+| Cost concern | `cost-envelope` |
+| New skill needed | `craft-skill` |
 
-## Quick Reference
+## Priority
 
-- Design before code → `brainstorming`
-- Break into tasks → `writing-plans`
-- Execute tasks → `subagent-driven-development` or `executing-plans`
-- Stuck in a loop → `error-recovery`
-- Trivial change → `quick-fix`
-- Large project → `context-management` + `progressive-disclosure`
-- Cost concerns → `token-budget`
+1. User's explicit instructions (CLAUDE.md, direct requests)
+2. Ironclad skills
+3. Default Claude behavior

@@ -1,65 +1,68 @@
 # Ironclad
 
-A disciplined, token-efficient agentic skills framework for AI coding agents.
+A cognitive framework for AI coding agents. Not a process enforcer — a judgment scaffolding system.
 
-Ironclad enforces structured workflows — brainstorm before you build, test before you ship, recover before you spiral. It works with Claude Code, Cursor, Codex, OpenClaw, and any platform that supports skill-based agent instructions.
+Ironclad doesn't tell agents to follow a workflow. It shapes *how they think* — surfacing assumptions, modeling failure before it happens, tracking scope in real time, and measuring velocity instead of activity.
+
+It works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and any platform that reads markdown skill files.
+
+---
 
 ## Philosophy
 
-- **Discipline over speed** — Process prevents mistakes. Every feature goes through design → plan → TDD → review.
-- **Token efficiency** — Skills are lean. No bloat, no marketing copy, no repeated content. One central anti-rationalization reference instead of duplicates in every skill.
-- **Adaptive review** — Not every task needs full two-stage review. Trivial tasks get single-pass, complex tasks get the full treatment.
-- **Recovery built-in** — When the agent gets stuck, it doesn't keep burning tokens. It stops, reverts, and changes strategy.
-- **Context-aware** — Large projects get managed through state files, load tiers, and session handoff protocols.
+- **Judgment over compliance** — Checklists fail at the edges. Judgment succeeds there.
+- **Evidence over assertion** — "Done" requires proof, not declaration.
+- **Prevention over recovery** — Map failure modes before they happen, not after.
+- **Velocity over activity** — Effort is not progress. Measure what closes.
+- **Lean by design** — Every line in every skill earned its place.
+
+---
 
 ## What's Inside
 
 ### Core Workflow
-| Skill | Purpose |
-|-------|---------|
-| **brainstorming** | Design before code. Every project gets a spec. |
-| **writing-plans** | Break work into bite-sized TDD tasks |
-| **subagent-driven-development** | Execute with fresh subagent per task + adaptive review |
-| **executing-plans** | Sequential execution with checkpoints |
-| **test-driven-development** | RED-GREEN-REFACTOR. No exceptions. |
-| **using-git-worktrees** | Isolated workspaces for every feature |
-| **finishing-a-development-branch** | Merge, PR, keep, or discard — structured completion |
+
+| Skill | What Makes It Different |
+|---|---|
+| **activate** | Session bootstrap with capability self-assessment and cognitive posture setting — not just "load your skills" |
+| **intention-mapping** | 5-layer goal drill to find the *actual* goal vs the stated one, modeled as a dependency graph |
+| **task-graph** | DAG-based task planning with critical path, parallelism identification, and risk tripwires — not a flat list |
+| **parallel-execution** | Phase-based orchestration with real-time conflict detection and merge point protocols |
+| **confidence-based-tdd** | RED-GREEN-REFACTOR + confidence scoring, mutation testing, and chaos scenarios |
+| **branch-strategy** | Full branch lifecycle: risk assessment, feature flags, merge windows, rollback planning |
+| **completion-protocol** | Formal handoff with diff summary, migration plan, copy-paste rollback — not just merge/PR/discard |
+| **fast-track** | Calibrated bypass for truly isolated ≤20-line changes, with qualification criteria and accumulation warnings |
 
 ### Quality Gates
-| Skill | Purpose |
-|-------|---------|
-| **requesting-code-review** | Dispatch reviewer subagent with precise context |
-| **receiving-code-review** | Technical evaluation, not performative agreement |
-| **verification-before-completion** | Evidence before claims. Always. |
-| **systematic-debugging** | 4-phase root cause process. No guessing. |
+
+| Skill | What Makes It Different |
+|---|---|
+| **adversarial-review** | Devil's advocate across 5 attack dimensions: correctness, edge cases, security, performance, maintainability |
+| **review-response** | Triage feedback by severity + response type — fix-now / track-as-debt / disagree (with reasoning structure) |
+| **root-cause-isolation** | Binary search on assumptions — eliminates half the assumption space per step instead of sequential guessing |
+| **ship-gate** | 6 evidence requirements with a formal sign-off artifact — done is proof, not feeling |
 
 ### Ironclad Originals
-| Skill | Purpose |
-|-------|---------|
-| **iteration** | Structured refinement after first implementation cycle |
-| **error-recovery** | Stop loops, revert, change strategy — save tokens |
-| **context-management** | PROJECT_STATE.md, load tiers, session handoff for large projects |
-| **token-budget** | Cost tracking per task, budget tiers, spending alerts |
-| **progressive-disclosure** | 3-tier context loading — never overflow the context window |
-| **quick-fix** | Bypass full workflow for trivial changes under 20 lines |
+
+| Skill | What It Is |
+|---|---|
+| **assumption-audit** | Surfaces and rates every assumption across 5 categories before implementation begins |
+| **scope-containment** | Real-time scope creep detection with a 4-option protocol and a scope discovery log |
+| **cognitive-offload** | Structured external memory in `.ironclad/memory/` — typed, tiered, queryable, not a flat state file |
+| **failure-modes** | Pre-execution failure mapping with likelihood/impact ratings, tripwires, and pre-planned recovery paths |
+| **cost-envelope** | 5-dimension cost modeling: compute, complexity debt, time, coordination, rollback — beyond token counting |
+| **momentum-check** | Velocity score + quality audit + complexity trend after each execution cycle |
 
 ### Meta
-| Skill | Purpose |
-|-------|---------|
-| **writing-skills** | Create new skills following TDD methodology |
-| **using-ironclad** | Bootstrap — ensures skills are invoked before any action |
-| **dispatching-parallel-agents** | Concurrent subagent workflows |
 
-### Platform Profiles
-Platform-specific configurations for Claude Code, Cursor, and Codex. Each profile disables irrelevant skills and sets recommended defaults.
+| Skill | What It Is |
+|---|---|
+| **craft-skill** | Evidence-driven skill authoring — requires a worked example and real-case test before a skill is published |
+| **swarm** | Full swarm coordination: task allocation packets, conflict arbitration, result aggregation, failure handling |
+
+---
 
 ## Installation
-
-### OpenClaw
-Copy `skills/` directory into your workspace:
-```bash
-cp -r skills/ ~/your-workspace/skills/
-```
 
 ### Claude Code
 ```
@@ -71,18 +74,44 @@ cp -r skills/ ~/your-workspace/skills/
 /add-plugin ironclad
 ```
 
-### Codex
-Copy skills to `~/.agents/skills/`
+### Gemini CLI
+```
+gemini extensions install https://github.com/tsilly07/ironclad-v3
+```
+
+### Codex / OpenCode
+Copy the `skills/` directory into your workspace.
+
+---
+
+## How It Works
+
+Every session starts with `activate`. It maps the task, sets cognitive posture, and identifies which skills apply. Then:
+
+1. **Intention-mapping** — finds the real goal, maps constraints, documents the design
+2. **Task-graph** — builds a DAG with parallelism and critical path identified
+3. **Assumption-audit** — validates every assumption before a line is written
+4. **Failure-modes** — maps how it can fail *before* it does
+5. **Parallel-execution / Swarm** — executes the graph with real-time conflict detection
+6. **Confidence-based TDD** — proves behavior, not just test passage
+7. **Adversarial-review** — actively tries to break the implementation
+8. **Ship-gate** — formal sign-off with attached evidence
+
+**Scope-containment** runs continuously throughout. **Momentum-check** runs after each cycle.
+
+---
 
 ## Design Principles
 
-**Lean by default.** 20 skills in ~1,700 lines. Every line earned its place by being non-obvious — if the agent would do it anyway, it's not in the skill.
+**Skills are working software, not documentation.** Every skill was tested on a real case before inclusion.
 
-**One source of truth.** Anti-rationalization patterns live in one central reference file, not copy-pasted across 14 skills.
+**One source of truth per concept.** No duplicated anti-patterns across 20 skills. One concept, one place.
 
-**Adaptive, not rigid.** Review depth scales with task complexity. Iteration doesn't require full re-brainstorm. Recovery doesn't require starting over.
+**Adaptive depth.** Fast-track for trivial changes. Full workflow for complex ones. The framework scales.
 
-**Platform-agnostic.** Works with any agent that reads markdown skill files. Platform profiles handle the differences.
+**Platform-agnostic.** Markdown skill files work with any agent that can read them. Platform profiles handle the differences.
+
+---
 
 ## License
 
