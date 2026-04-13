@@ -1,0 +1,8 @@
+{
+  "name": "ironclad",
+  "version": "3.0.0",
+  "description": "A disciplined, token-efficient agentic skills framework",
+  "skills_dir": "skills",
+  "entry_skill": "using-ironclad",
+  "platforms": ["gemini-cli"]
+}

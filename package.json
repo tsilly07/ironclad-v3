@@ -1,0 +1,21 @@
+{
+  "name": "ironclad",
+  "version": "3.0.0",
+  "description": "A disciplined, token-efficient agentic skills framework for AI coding agents",
+  "keywords": [
+    "ai",
+    "coding-agent",
+    "skills",
+    "framework",
+    "tdd",
+    "methodology",
+    "claude-code",
+    "cursor",
+    "codex"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/ironclad"
+  }
+}
