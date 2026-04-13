@@ -1,7 +1,7 @@
 {
   "name": "ironclad",
   "version": "3.0.0",
-  "description": "A disciplined, token-efficient agentic skills framework",
+  "description": "A cognitive framework for AI coding agents — judgment scaffolding, evidence-based completion, and real-time scope control",
   "skills_dir": "skills",
-  "entry_skill": "using-ironclad"
+  "entry_skill": "activate"
 }

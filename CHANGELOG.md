@@ -1,30 +1,35 @@
 # Changelog
 
-## v3.0.0 — Ironclad
+## v3.0.0 — Ironclad Cognitive Framework
 
-Initial public release. A disciplined, token-efficient fork of the agentic skills methodology.
+Complete redesign. 20 original skills. No inherited content.
 
-### Core Workflow (13 skills)
-- brainstorming, writing-plans, test-driven-development
-- subagent-driven-development, executing-plans, iteration
-- systematic-debugging, verification-before-completion
-- requesting-code-review, receiving-code-review
-- finishing-a-development-branch, using-git-worktrees
-- dispatching-parallel-agents
+**Philosophy shift:** Process enforcer → Judgment scaffolding system.
+
+### Core Workflow (8 skills)
+- **activate** — Session bootstrap with capability self-assessment and cognitive posture
+- **intention-mapping** — 5-layer goal drill to find actual vs stated goal, modeled as a dependency graph
+- **task-graph** — DAG-based task planning with critical path, parallelism, and risk tripwires
+- **parallel-execution** — Phase-based orchestration with real-time conflict detection
+- **confidence-based-tdd** — RED-GREEN-REFACTOR + confidence scoring + mutation testing + chaos scenarios
+- **branch-strategy** — Full branch lifecycle: risk assessment, feature flags, merge windows, rollback
+- **completion-protocol** — Formal handoff with diff summary, migration plan, copy-paste rollback
+- **fast-track** — Calibrated bypass for truly isolated ≤20-line changes with qualification criteria
+
+### Quality Gates (4 skills)
+- **adversarial-review** — Devil's advocate across 5 attack dimensions
+- **review-response** — Triage feedback by severity + response type with structured disagreement handling
+- **root-cause-isolation** — Binary search on assumptions — O(log n) not O(n) debugging
+- **ship-gate** — 6 evidence requirements with a formal sign-off artifact
 
 ### Ironclad Originals (6 new skills)
-- **error-recovery** — Stop loops, revert, change strategy
-- **context-management** — PROJECT_STATE.md, load tiers, session handoff
-- **token-budget** — Cost tracking per task, budget tiers, spending alerts
-- **progressive-disclosure** — 3-tier context loading for large projects
-- **quick-fix** — Bypass full workflow for trivial changes (<20 lines)
-- **using-ironclad** — Bootstrap skill with anti-rationalization reference
+- **assumption-audit** — 5-category assumption framework with confidence scoring
+- **scope-containment** — Real-time scope creep detection with 4-option protocol
+- **cognitive-offload** — Typed, tiered external memory in `.ironclad/memory/`
+- **failure-modes** — Pre-execution failure mapping with tripwires and recovery paths
+- **cost-envelope** — 5-dimension cost modeling beyond token counting
+- **momentum-check** — Velocity score: closed / (closed + opened) per cycle
 
-### Meta
-- writing-skills — Create and test new skills
-
-### Design Principles
-- 20 skills in ~1,700 lines — lean, no bloat
-- One central anti-rationalization reference
-- Adaptive review depth based on task complexity
-- Platform profiles for Claude Code, Cursor, Codex
+### Meta (2 skills)
+- **craft-skill** — Evidence-driven skill authoring requiring a worked example before publication
+- **swarm** — Full multi-agent coordination with task packets, arbitration, and aggregation

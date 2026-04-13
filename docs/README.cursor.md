@@ -7,12 +7,16 @@ In Cursor Agent chat:
 /add-plugin ironclad
 ```
 
-Or clone and point Cursor to the local directory.
+Or clone locally and point Cursor to the directory:
+```bash
+git clone https://github.com/tsilly07/ironclad-v3.git
+```
 
 ## Notes
 
-- Git worktrees are supported if your environment has git
-- Subagent dispatch works via Cursor's agent system
+- `cognitive-offload` memory stored in `.ironclad/memory/` in your workspace
+- `intention-mapping` works well in Composer mode
+- `swarm` not fully available — use `parallel-execution` for multi-phase work
 - See `platform-profiles/cursor.md` for specific configuration
 
 ## Updating

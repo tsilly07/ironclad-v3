@@ -4,16 +4,17 @@
 All skills enabled with the following adaptations:
 
 ## Disabled/Modified Skills
-- **dispatching-parallel-agents** — Limited subagent support in Cursor. Use executing-plans instead for sequential execution.
-- **using-git-worktrees** — Cursor manages its own workspace. Skip worktree creation; work in current workspace unless user requests isolation.
+- **swarm** — Limited subagent support in Cursor. Use `parallel-execution` for phase-based sequential execution instead.
+- **branch-strategy** (worktree mode) — Cursor manages its own workspace. Skip worktree creation unless user requests explicit isolation.
 
 ## Platform-Specific Notes
 - Use `/add-plugin ironclad` to install
 - Skills invoke via Cursor's plugin system
-- See `references/cursor-tools.md` for tool name equivalents
-- Composer mode works best with brainstorming skill
+- `cognitive-offload` memory stored at `.ironclad/memory/` in your workspace
+- Composer mode works well with `intention-mapping` skill
 
 ## Recommended Defaults
-- Execution: executing-plans (inline, sequential)
-- Review: Single-pass for most tasks (Cursor lacks efficient subagent dispatch)
+- Execution: `parallel-execution` (inline, phase-based)
+- Review: `adversarial-review` → `ship-gate`
 - Worktrees: Skip unless explicitly requested
+- Fast changes: `fast-track` with qualification check
