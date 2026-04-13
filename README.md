@@ -4,7 +4,7 @@ A cognitive framework for AI coding agents. Not a process enforcer — a judgmen
 
 Ironclad doesn't tell agents to follow a workflow. It shapes *how they think* — surfacing assumptions, modeling failure before it happens, tracking scope in real time, and measuring velocity instead of activity.
 
-It works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and any platform that reads markdown skill files.
+It works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, Qwen Models, and any platform that reads markdown skill files.
 
 ---
 
@@ -79,8 +79,8 @@ It works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, and any platform
 gemini extensions install https://github.com/tsilly07/ironclad-v3
 ```
 
-### Codex / OpenCode
-Copy the `skills/` directory into your workspace.
+### Codex / OpenCode / Qwen Models
+Copy the `skills/` directory into your workspace. Point your agent's system prompt or workspace context settings to `AGENTS.md` or `QWEN.md`.
 
 ---
 
